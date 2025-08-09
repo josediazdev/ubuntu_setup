@@ -34,13 +34,28 @@ sudo npm i -g pyright
 sudo npm i -g sql-language-server
 sudo npm i -g html
 sudo npm i -g css
+sudo npm i -g javascript-typescript-langserver
+
+#Instalando PHP y servidor de lenguaje para PHP
+#dependencias
+sudo apt install curl php-cli php-mbstring git unzip -y
+
+#composer
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+#php
+sudo apt install php libapache2-mod-php -y
+
+#servidor de lenguaje PHP
+composer global require "felixfbecker/language-server"
 
 
+# instalando pip
 sudo apt install python3-pip -y
 
 sudo apt-get install pylint -y
 
-echo "NEOVIM INSTALADO"
+echo "NEOVIM Y SERVIDORES DE LENGUAJES INSTALADOS"
 
 echo ""
 

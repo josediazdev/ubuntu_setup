@@ -28,7 +28,7 @@ set showcmd		" mostrar comandos que estamos utilizando
 set encoding=utf-8	" permite configurar la codificaciòn de nuestros documentos a utf-8
 set showmatch		" mostrar parentesis o corchete opuesto
 set relativenumber	" mostrar número hacia arriba y hacia abajo contando desde 0 donde está el cursor
-set sw=2		" identar el código con dos espacios
+set sw=4		" identar el código con cuatro espacios
 set timeoutlen=500	" tiempo para detectar combinaciones de atajos de teclado a medio segundo
 
 
@@ -70,10 +70,10 @@ Plug 'hrsh7th/nvim-cmp'
 
 call plug#end()
 " Instalar plugins con VimPlug
-" :PlugInstall - 
+" :PlugInstall
 
 " activando las configuraciones del LSP
-" :CocInstall coc-python coc-html coc-css coc-sql
+" :CocInstall coc-python coc-html coc-css coc-sql coc-php coc-tsserver
 
 "enabling gruvbox theme
 colorscheme gruvbox

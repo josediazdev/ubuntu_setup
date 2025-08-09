@@ -33,4 +33,12 @@ sleep 0.5
 
 clear
 
+echo "Iniciar Neovim"
+
+echo "Ejecutar -> :PlugInstall"
+
+echo "Ejecutar -> :CocInstall coc-python coc-phpls coc-tsserver coc-html coc-css coc-sql"
+
+echo "Configurar Git"
+
 /bin/zsh
