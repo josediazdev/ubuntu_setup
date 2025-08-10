@@ -1,16 +1,25 @@
 #!/bin/bash
 
-#actualizando el sistema
+# Script: install.sh
+# Propósito: Orquestar la instalación completa del entorno
+# Orden: update -> neovim -> ollama -> zsh -> update final -> instrucciones finales
+
+# Actualizando el sistema (antes de instalar componentes)
 ./update.sh
 
+# Instalar y configurar Neovim y herramientas de desarrollo
 ./neovim.sh
 
+# Instalar Ollama y descargar el modelo base
 ./ollama.sh
 
+# Instalar Zsh y Oh My Zsh, y establecer Zsh como shell por defecto
 ./zsh.sh
 
+# Actualizar nuevamente tras la instalación de componentes
 ./update.sh
 
+# Mensajes finales
 echo "ENTORNO DE DESARROLLO CONFIGURADO"
 
 echo ""
@@ -41,4 +50,5 @@ echo "Ejecutar -> :CocInstall coc-python coc-phpls coc-tsserver coc-html coc-css
 
 echo "Configurar Git"
 
+# Cambiar a Zsh al finalizar
 /bin/zsh

@@ -1,58 +1,55 @@
+#!/bin/bash
+# Script: neovim.sh
+# Propósito: Instalar y configurar Neovim y dependencias para LSP/autocompletado
+# Requiere: sudo, conexión a Internet
+# Nota: Si Snap no está disponible, instalar snapd
+
 echo "INSTALANDO NEOVIM"
 
 sleep 1
 
-#instalando snap
-
+# Instalando Snap (si ya está presente, se omitirá)
+# En algunas instalaciones puede requerir snapd: sudo apt install snapd -y
 sudo apt install snap -y
 
-#Instalando neovim como editor de código
-
+# Instalar Neovim como editor de código
 sudo snap install nvim --classic
 
-#Agregando configuraciones
+# Copiar configuraciones de Vim/Neovim al home del usuario
 cp -r neovim_files/.vim ~/.vim ; cp neovim_files/.vimrc ~/.vimrc ; cp -r neovim_files/.config/nvim/ ~/.config/nvim/
 
-#Instalando nodejs para utilizar el plugin de Conquer of Completion
-
+# Instalar Node.js y npm para soporte de plugins (CoC, LSP)
 sudo apt install nodejs -y
 
-#Actualizando nodejs
-
-#Instalando npm, gestor de paquetes para node
+# Instalar npm, gestor de paquetes de Node.js
 sudo apt install npm -y
-#Actualizando npm
-sudo npm install -g nom@latest
-#Instalando gestor de vesiones node
+
+# Actualizar npm a la última versión estable (corregido)
+sudo npm install -g npm@latest
+
+# Instalar gestor de versiones de Node y actualizar a estable
 sudo npm install -g n
-#Actualizando node
 sudo n stable
 
-#Instalando servidores de lenguaje básicos
-
+# Instalar servidores de lenguaje básicos (global)
 sudo npm i -g pyright
 sudo npm i -g sql-language-server
 sudo npm i -g html
 sudo npm i -g css
 sudo npm i -g javascript-typescript-langserver
 
-#Instalando PHP y servidor de lenguaje para PHP
-#dependencias
+# Instalar PHP, Composer y servidor de lenguaje para PHP (felixfbecker)
+# Dependencias PHP/Composer
 sudo apt install curl php-cli php-mbstring git unzip -y
-
-#composer
+# Composer
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-
-#php
+# PHP y módulo de Apache (opcional)
 sudo apt install php libapache2-mod-php -y
-
-#servidor de lenguaje PHP
+# Servidor de lenguaje PHP
 composer global require "felixfbecker/language-server"
 
-
-# instalando pip
+# Instalar pip y pylint para Python
 sudo apt install python3-pip -y
-
 sudo apt-get install pylint -y
 
 echo "NEOVIM Y SERVIDORES DE LENGUAJES INSTALADOS"
