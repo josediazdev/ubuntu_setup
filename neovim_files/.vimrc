@@ -28,7 +28,7 @@ set showcmd		" mostrar comandos que estamos utilizando
 set encoding=utf-8	" permite configurar la codificaciòn de nuestros documentos a utf-8
 set showmatch		" mostrar parentesis o corchete opuesto
 set relativenumber	" mostrar número hacia arriba y hacia abajo contando desde 0 donde está el cursor
-set sw=4		" identar el código con cuatro espacios
+set sw=2		" identar el código con cuatro espacios
 set timeoutlen=500	" tiempo para detectar combinaciones de atajos de teclado a medio segundo
 
 
@@ -225,18 +225,10 @@ lua << EOF
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require'lspconfig'.pyright.setup{}
-  require'lspconfig'.gopls.setup{}
-  require'lspconfig'.sqlls.setup{}
-
   require("nvim-autopairs").setup {}
 
 
 EOF
-
-" require'lspconfig'.pyright.setup{on_attach=require'completion'.on_attach}	
-" installing a language server for python: sudo npm i -g pyright
-" installing a language server for sql: sudo npm i -g sql-language-server
 
 
 " Mappings Go To's

@@ -45,8 +45,9 @@ sudo apt install curl php-cli php-mbstring git unzip -y
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 # PHP y módulo de Apache (opcional)
 sudo apt install php libapache2-mod-php -y
-# Servidor de lenguaje PHP
-composer global require "felixfbecker/language-server"
+
+## Servidor de lenguaje PHP
+#composer global require "felixfbecker/language-server"
 
 # Instalar pip y pylint para Python
 sudo apt install python3-pip -y
