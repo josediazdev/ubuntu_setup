@@ -67,6 +67,12 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
+" Agregando Emmet
+Plug 'mattn/emmet-vim'
+
+" Agregando soporte para blade
+Plug 'jwalton512/vim-blade'
+
 
 call plug#end()
 " Instalar plugins con VimPlug
@@ -121,6 +127,7 @@ nmap <Leader>bs :bn<CR>
 nmap <Leader>bd :bd!<CR>
 ":bd!#
 
+nmap <Leader>y <C-y>,
 
 " Conquer of completion requiere arquitectura de 64 bit y neovim 0.9 en adelante
 "
